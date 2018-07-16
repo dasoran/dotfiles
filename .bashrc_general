@@ -16,10 +16,12 @@ alias gs="git status"
 alias gc="git commit -a"
 alias gcs="git commit -a -s"
 alias gpo="git branch | grep \* | cut -d' ' -f 2 | xargs git push --set-upstream origin"
+alias gp="git push"
 
 # edit
 alias ebp="vi ~/.bash_profile"
 alias ebr="vi ~/.bashrc"
+alias ebg="vi ~/.bashrc_general"
 
 # source
 alias sbp="source ~/.bash_profile"
