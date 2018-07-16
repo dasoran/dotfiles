@@ -1,0 +1,34 @@
+# bash settings
+if [ "$GIT_BASH_SCRIPT_PATH" ]; then
+    source ${GIT_BASH_SCRIPT_PATH}git-prompt.sh
+    source ${GIT_BASH_SCRIPT_PATH}git-completion.bash
+    GIT_PS1_SHOWDIRTYSTATE=true
+    export PS1='\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h\[\033[m\]:\[\033[33;1m\]\w\[\033[m\]\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
+else
+    export PS1='\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h\[\033[m\]:\[\033[33;1m\]\w\[\033[m\]\[\033[00m\]\$ '
+fi
+
+# general alias
+# git
+alias glg="git log --stat --decorate"
+alias glg="git log --stat --graph --decorate"
+alias gs="git status"
+alias gc="git commit -a"
+alias gcs="git commit -a -s"
+alias gpo="git branch | grep \* | cut -d' ' -f 2 | xargs git push --set-upstream origin"
+
+# edit
+alias ebp="vi ~/.bash_profile"
+alias ebr="vi ~/.bashrc"
+
+# source
+alias sbp="source ~/.bash_profile"
+alias sbr="source ~/.bashrc"
+
+# docker
+alias dprune="docker system prune -a"
+alias drmi="docker rmi -f \$(docker images -q -a -f dangling=true)" # docker rm dangling images
+alias dps="docker ps -a"
+alias dil="docker images" # docker image list
+
+
